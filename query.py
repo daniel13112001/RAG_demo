@@ -53,6 +53,7 @@ def generate_answer(query, retrieved_docs):
     prompt = f"""
 You are a professional financial adviser assistant.
 Answer the user's question using the context below.
+Use only the context to answer questions. Do not rely on your own parametric memory.
 
 Context:
 {context}
