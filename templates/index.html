@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Adviser RAG Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Financial Adviser Assistant</h1>
+            <p class="subtitle">Ask questions about financial advice and get instant answers</p>
+        </header>
+
+        <main>
+            <!-- Query Input Section -->
+            <div class="query-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="queryInput" 
+                        class="query-input" 
+                        placeholder="Ask a question about financial planning..."
+                        autocomplete="off"
+                    >
+                    <button id="submitBtn" class="submit-btn">Send</button>
+                </div>
+                <div id="errorMsg" class="error-msg"></div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="spinner hidden"></div>
+
+            <!-- Answer Section -->
+            <div id="resultSection" class="result-section hidden">
+                <div class="answer-box">
+                    <h2>Answer</h2>
+                    <p id="answerText" class="answer-text"></p>
+                </div>
+
+                <!-- Sources Section -->
+                <div class="sources-box">
+                    <h3>📚 Sources Used</h3>
+                    <div id="sourcesList" class="sources-list"></div>
+                </div>
+
+                <!-- Context Chunks Section -->
+                <div class="context-box">
+                    <h3>📖 Retrieved Context</h3>
+                    <div id="contextList" class="context-list"></div>
+                </div>
+            </div>
+
+            <!-- Welcome Message -->
+            <div id="welcomeMsg" class="welcome-msg">
+                <h2>Welcome! 👋</h2>
+                <p>Start by asking a question about financial planning, wealth management, or risk education.</p>
+                <p style="font-size: 0.9em; color: #666; margin-top: 20px;">
+                    Examples: "What are the key steps in client onboarding?", "Tell me about market risk", "How should I manage wealth?"
+                </p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Financial Adviser RAG System | Powered by OpenAI & LangChain</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
